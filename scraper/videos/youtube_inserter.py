@@ -43,7 +43,7 @@ def run_scrape():
 
 if __name__ == '__main__':
 	
-	mongo_conn = Connection('localhost:27117')
+	mongo_conn = Connection()
 	video_content_coll = mongo_conn['content']['videos']
 	youtube_names_coll = mongo_conn['sources']['videos']
 
