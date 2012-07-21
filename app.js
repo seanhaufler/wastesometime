@@ -8,6 +8,7 @@ var express = require('express')
   , less = require('less')
   , lessMiddleware = require('less-middleware')
   , http = require('http')
+  , config = require('./app/config.js')
   , underscore = require('underscore')._
   , backbone = require('backbone');
 
@@ -34,6 +35,9 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+
+// Test to ensure endpoint works
+console.log(config.queryVideos(0,1000));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
