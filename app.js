@@ -10,7 +10,8 @@ var express = require('express')
   , http = require('http')
   , config = require('./app/config.js')
   , underscore = require('underscore')._
-  , backbone = require('backbone');
+  , backbone = require('backbone')
+  , $ = require('jquery');
 
 var app = express();
 
