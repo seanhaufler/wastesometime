@@ -31,7 +31,6 @@ class RssScraper:
                     part_text = part.text_content()
                     part_word_list = part_text.split(" ")
                     wordcount += len(part_word_list)
-                print(_id, url, title, wordcount)
                 self.coll.update(
                     {"_id": _id},
                     {"$set": {"title": title,
