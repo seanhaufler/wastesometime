@@ -124,10 +124,10 @@ def start_cluster(sharded=False):
 	"""Sets up cluster with 1 shard, replica set with 3 members
 	"""
 	# Kill all spawned mongods
-	killAllMongoProc('localhost', PORTS_ONE)
+	#killAllMongoProc('localhost', PORTS_ONE)
 
 	# Kill all spawned mongos
-	killMongosProc()
+	#killMongosProc()
 	
 	remove_dir(DEMO_SERVER_LOG)
 	remove_dir(DEMO_SERVER_DATA)        
