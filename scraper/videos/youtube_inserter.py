@@ -1,6 +1,7 @@
 from gdata.youtube.service import YouTubeService
 from pymongo import Connection
 import md5
+import time
 
 def get_user_videos(username):
   	yt_service = YouTubeService()
@@ -57,3 +58,4 @@ if __name__ == '__main__':
 	
 	while True:
 		run_scrape()
+		time.sleep(600)

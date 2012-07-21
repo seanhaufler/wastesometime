@@ -1,17 +1,165 @@
+Sat Jul 21 18:42:14 [initandlisten] MongoDB starting : pid=498 port=27017 dbpath=/data/db/ 64-bit host=Admins-MacBook-Pro.local
+Sat Jul 21 18:42:14 [initandlisten] db version v2.0.6, pdfile version 4.5
+Sat Jul 21 18:42:14 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Sat Jul 21 18:42:14 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sat Jul 21 18:42:14 [initandlisten] options: { fork: true, logpath: "mongo.log", port: 27017 }
+Sat Jul 21 18:42:14 [initandlisten] exception in initAndListen: 10296 dbpath (/data/db/) does not exist, terminating
+Sat Jul 21 18:42:14 dbexit: 
+Sat Jul 21 18:42:14 [initandlisten] shutdown: going to close listening sockets...
+Sat Jul 21 18:42:14 [initandlisten] shutdown: going to flush diaglog...
+Sat Jul 21 18:42:14 [initandlisten] shutdown: going to close sockets...
+Sat Jul 21 18:42:14 [initandlisten] shutdown: waiting for fs preallocator...
+Sat Jul 21 18:42:14 [initandlisten] shutdown: lock for final commit...
+Sat Jul 21 18:42:14 [initandlisten] shutdown: final commit...
+Sat Jul 21 18:42:14 [initandlisten] shutdown: closing all files...
+Sat Jul 21 18:42:14 [initandlisten] closeAllFiles() finished
+Sat Jul 21 18:42:14 dbexit: really exiting now
 
 
 ***** SERVER RESTARTED *****
 
 
-Sat Jul 21 14:39:04 [initandlisten] MongoDB starting : pid=35781 port=27117 dbpath=/Users/aayushu/wastesometime/data 64-bit host=Admins-MacBook-Pro.local
-Sat Jul 21 14:39:04 [initandlisten] db version v2.0.6, pdfile version 4.5
-Sat Jul 21 14:39:04 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
-Sat Jul 21 14:39:04 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
-Sat Jul 21 14:39:04 [initandlisten] options: { dbpath: "/Users/aayushu/wastesometime/data", fork: true, logappend: true, logpath: "/Users/aayushu/wastesometime/mongo.log", port: 27117 }
-Sat Jul 21 14:39:04 [initandlisten] journal dir=/Users/aayushu/wastesometime/data/journal
-Sat Jul 21 14:39:04 [initandlisten] recover : no journal files present, no recovery needed
-Sat Jul 21 14:39:04 [websvr] admin web console waiting for connections on port 28117
-Sat Jul 21 14:39:04 [initandlisten] waiting for connections on port 27117
-Sat Jul 21 14:39:15 [initandlisten] connection accepted from 127.0.0.1:51640 #1
-Sat Jul 21 14:39:23 [conn1] end connection 127.0.0.1:51640
-Sat Jul 21 14:40:04 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 18:42:37 [initandlisten] MongoDB starting : pid=505 port=27117 dbpath=/Users/aayushu/wastesometime/data 64-bit host=Admins-MacBook-Pro.local
+Sat Jul 21 18:42:37 [initandlisten] db version v2.0.6, pdfile version 4.5
+Sat Jul 21 18:42:37 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Sat Jul 21 18:42:37 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sat Jul 21 18:42:37 [initandlisten] options: { dbpath: "/Users/aayushu/wastesometime/data", fork: true, logappend: true, logpath: "/Users/aayushu/wastesometime/mongo.log", port: 27117 }
+Sat Jul 21 18:42:37 [initandlisten] journal dir=/Users/aayushu/wastesometime/data/journal
+Sat Jul 21 18:42:37 [initandlisten] recover begin
+Sat Jul 21 18:42:37 [initandlisten] recover lsn: 7559134
+Sat Jul 21 18:42:37 [initandlisten] recover /Users/aayushu/wastesometime/data/journal/j._0
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:5400694 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:5787864 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6119647 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6174909 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6451651 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6506953 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6673094 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6728435 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section seq:6783796 < lsn:7559134
+Sat Jul 21 18:42:38 [initandlisten] recover skipping application of section more...
+Sat Jul 21 18:42:39 [initandlisten] recover cleaning up
+Sat Jul 21 18:42:39 [initandlisten] removeJournalFiles
+Sat Jul 21 18:42:39 [initandlisten] recover done
+Sat Jul 21 18:42:41 [websvr] admin web console waiting for connections on port 28117
+Sat Jul 21 18:42:41 [initandlisten] waiting for connections on port 27117
+
+
+***** SERVER RESTARTED *****
+
+
+Sat Jul 21 18:43:00 [initandlisten] MongoDB starting : pid=511 port=27017 dbpath=/Users/aayushu/wastesometime/data 64-bit host=Admins-MacBook-Pro.local
+Sat Jul 21 18:43:00 [initandlisten] db version v2.0.6, pdfile version 4.5
+Sat Jul 21 18:43:00 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Sat Jul 21 18:43:00 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sat Jul 21 18:43:00 [initandlisten] options: { dbpath: "/Users/aayushu/wastesometime/data", fork: true, logappend: true, logpath: "/Users/aayushu/wastesometime/mongo.log", port: 27017 }
+Sat Jul 21 18:43:00 [initandlisten] exception in initAndListen: 10310 Unable to acquire lock for lockfilepath: /Users/aayushu/wastesometime/data/mongod.lock, terminating
+Sat Jul 21 18:43:00 dbexit: 
+Sat Jul 21 18:43:00 [initandlisten] shutdown: going to close listening sockets...
+Sat Jul 21 18:43:00 [initandlisten] shutdown: going to flush diaglog...
+Sat Jul 21 18:43:00 [initandlisten] shutdown: going to close sockets...
+Sat Jul 21 18:43:00 [initandlisten] shutdown: waiting for fs preallocator...
+Sat Jul 21 18:43:00 [initandlisten] shutdown: lock for final commit...
+Sat Jul 21 18:43:00 [initandlisten] shutdown: final commit...
+Sat Jul 21 18:43:00 [initandlisten] shutdown: closing all files...
+Sat Jul 21 18:43:00 [initandlisten] closeAllFiles() finished
+Sat Jul 21 18:43:00 dbexit: really exiting now
+
+
+***** SERVER RESTARTED *****
+
+
+Sat Jul 21 18:43:30 [initandlisten] MongoDB starting : pid=586 port=27017 dbpath=/Users/aayushu/wastesometime/data 64-bit host=Admins-MacBook-Pro.local
+Sat Jul 21 18:43:30 [initandlisten] db version v2.0.6, pdfile version 4.5
+Sat Jul 21 18:43:30 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Sat Jul 21 18:43:30 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sat Jul 21 18:43:30 [initandlisten] options: { dbpath: "/Users/aayushu/wastesometime/data", fork: true, logappend: true, logpath: "/Users/aayushu/wastesometime/mongo.log", port: 27017 }
+Sat Jul 21 18:43:30 [initandlisten] journal dir=/Users/aayushu/wastesometime/data/journal
+Sat Jul 21 18:43:30 [initandlisten] recover : no journal files present, no recovery needed
+Sat Jul 21 18:43:30 [websvr] admin web console waiting for connections on port 28017
+Sat Jul 21 18:43:30 [initandlisten] waiting for connections on port 27017
+Sat Jul 21 18:43:35 [initandlisten] connection accepted from 127.0.0.1:49407 #1
+Sat Jul 21 18:43:36 [conn1] end connection 127.0.0.1:49407
+Sat Jul 21 18:43:41 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 18:43:48 [initandlisten] connection accepted from 127.0.0.1:49409 #2
+Sat Jul 21 18:43:48 [initandlisten] connection accepted from 127.0.0.1:49410 #3
+Sat Jul 21 18:43:48 [initandlisten] connection accepted from 127.0.0.1:49411 #4
+Sat Jul 21 18:43:48 [initandlisten] connection accepted from 127.0.0.1:49412 #5
+Sat Jul 21 18:43:48 [initandlisten] connection accepted from 127.0.0.1:49413 #6
+Sat Jul 21 18:43:48 [conn2] end connection 127.0.0.1:49409
+Sat Jul 21 18:43:48 [conn3] end connection 127.0.0.1:49410
+Sat Jul 21 18:43:48 [conn5] end connection 127.0.0.1:49412
+Sat Jul 21 18:43:48 [conn6] end connection 127.0.0.1:49413
+Sat Jul 21 18:43:48 [conn4] end connection 127.0.0.1:49411
+Sat Jul 21 18:43:59 [initandlisten] connection accepted from 127.0.0.1:49414 #7
+Sat Jul 21 18:44:09 [FileAllocator] allocating new datafile /Users/aayushu/wastesometime/data/content.ns, filling with zeroes...
+Sat Jul 21 18:44:09 [FileAllocator] creating directory /Users/aayushu/wastesometime/data/_tmp
+Sat Jul 21 18:44:09 [FileAllocator] done allocating datafile /Users/aayushu/wastesometime/data/content.ns, size: 16MB,  took 0.025 secs
+Sat Jul 21 18:44:09 [FileAllocator] allocating new datafile /Users/aayushu/wastesometime/data/content.0, filling with zeroes...
+Sat Jul 21 18:44:10 [FileAllocator] done allocating datafile /Users/aayushu/wastesometime/data/content.0, size: 64MB,  took 0.738 secs
+Sat Jul 21 18:44:10 [FileAllocator] allocating new datafile /Users/aayushu/wastesometime/data/content.1, filling with zeroes...
+Sat Jul 21 18:44:10 [conn7] build index content.videos { _id: 1 }
+Sat Jul 21 18:44:10 [conn7] build index done 0 records 0.003 secs
+Sat Jul 21 18:44:10 [conn7] insert content.videos 1187ms
+Sat Jul 21 18:44:11 [FileAllocator] done allocating datafile /Users/aayushu/wastesometime/data/content.1, size: 128MB,  took 1.655 secs
+Sat Jul 21 18:44:30 [clientcursormon] mem (MB) res:4 virt:2627 mapped:80
+Sat Jul 21 18:44:34 [initandlisten] connection accepted from 127.0.0.1:49416 #8
+Sat Jul 21 18:44:34 [initandlisten] connection accepted from 127.0.0.1:49417 #9
+Sat Jul 21 18:44:34 [initandlisten] connection accepted from 127.0.0.1:49418 #10
+Sat Jul 21 18:44:34 [initandlisten] connection accepted from 127.0.0.1:49419 #11
+Sat Jul 21 18:44:34 [initandlisten] connection accepted from 127.0.0.1:49420 #12
+Sat Jul 21 18:44:34 [conn9] end connection 127.0.0.1:49417
+Sat Jul 21 18:44:34 [conn10] end connection 127.0.0.1:49418
+Sat Jul 21 18:44:34 [conn8] end connection 127.0.0.1:49416
+Sat Jul 21 18:44:34 [conn12] end connection 127.0.0.1:49420
+Sat Jul 21 18:44:34 [conn11] end connection 127.0.0.1:49419
+Sat Jul 21 18:45:21 [initandlisten] connection accepted from 127.0.0.1:49438 #13
+Sat Jul 21 18:45:21 [initandlisten] connection accepted from 127.0.0.1:49439 #14
+Sat Jul 21 18:45:21 [initandlisten] connection accepted from 127.0.0.1:49440 #15
+Sat Jul 21 18:45:21 [initandlisten] connection accepted from 127.0.0.1:49441 #16
+Sat Jul 21 18:45:21 [initandlisten] connection accepted from 127.0.0.1:49442 #17
+Sat Jul 21 18:45:21 [conn15] end connection 127.0.0.1:49440
+Sat Jul 21 18:45:21 [conn17] end connection 127.0.0.1:49442
+Sat Jul 21 18:45:21 [conn14] end connection 127.0.0.1:49439
+Sat Jul 21 18:45:21 [conn13] end connection 127.0.0.1:49438
+Sat Jul 21 18:45:21 [conn16] end connection 127.0.0.1:49441
+Sat Jul 21 18:46:38 [initandlisten] connection accepted from 127.0.0.1:49455 #18
+Sat Jul 21 18:46:38 [initandlisten] connection accepted from 127.0.0.1:49456 #19
+Sat Jul 21 18:46:38 [initandlisten] connection accepted from 127.0.0.1:49457 #20
+Sat Jul 21 18:46:38 [initandlisten] connection accepted from 127.0.0.1:49458 #21
+Sat Jul 21 18:46:38 [initandlisten] connection accepted from 127.0.0.1:49459 #22
+Sat Jul 21 18:46:38 [conn22] end connection 127.0.0.1:49459
+Sat Jul 21 18:46:38 [conn18] end connection 127.0.0.1:49455
+Sat Jul 21 18:46:38 [conn21] end connection 127.0.0.1:49458
+Sat Jul 21 18:46:38 [conn20] end connection 127.0.0.1:49457
+Sat Jul 21 18:46:38 [conn19] end connection 127.0.0.1:49456
+Sat Jul 21 18:47:04 [initandlisten] connection accepted from 127.0.0.1:49460 #23
+Sat Jul 21 18:47:04 [initandlisten] connection accepted from 127.0.0.1:49461 #24
+Sat Jul 21 18:47:04 [initandlisten] connection accepted from 127.0.0.1:49462 #25
+Sat Jul 21 18:47:04 [initandlisten] connection accepted from 127.0.0.1:49463 #26
+Sat Jul 21 18:47:04 [initandlisten] connection accepted from 127.0.0.1:49464 #27
+Sat Jul 21 18:47:04 [conn27] end connection 127.0.0.1:49464
+Sat Jul 21 18:47:04 [conn23] end connection 127.0.0.1:49460
+Sat Jul 21 18:47:04 [conn24] end connection 127.0.0.1:49461
+Sat Jul 21 18:47:04 [conn26] end connection 127.0.0.1:49463
+Sat Jul 21 18:47:04 [conn25] end connection 127.0.0.1:49462
+Sat Jul 21 18:47:31 [initandlisten] connection accepted from 127.0.0.1:49465 #28
+Sat Jul 21 18:47:31 [initandlisten] connection accepted from 127.0.0.1:49466 #29
+Sat Jul 21 18:47:31 [initandlisten] connection accepted from 127.0.0.1:49467 #30
+Sat Jul 21 18:47:31 [initandlisten] connection accepted from 127.0.0.1:49468 #31
+Sat Jul 21 18:47:31 [initandlisten] connection accepted from 127.0.0.1:49469 #32
+Sat Jul 21 18:47:31 [conn28] end connection 127.0.0.1:49465
+Sat Jul 21 18:47:31 [conn29] end connection 127.0.0.1:49466
+Sat Jul 21 18:47:31 [conn31] end connection 127.0.0.1:49468
+Sat Jul 21 18:47:31 [conn32] end connection 127.0.0.1:49469
+Sat Jul 21 18:47:31 [conn30] end connection 127.0.0.1:49467
+Sat Jul 21 18:48:41 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 18:49:30 [clientcursormon] mem (MB) res:4 virt:2627 mapped:80
+Sat Jul 21 18:53:41 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 18:54:31 [clientcursormon] mem (MB) res:4 virt:2627 mapped:80
+Sat Jul 21 18:58:41 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 18:59:31 [clientcursormon] mem (MB) res:4 virt:2627 mapped:80
+Sat Jul 21 19:03:41 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 19:04:31 [clientcursormon] mem (MB) res:4 virt:2627 mapped:80
+Sat Jul 21 19:08:41 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
+Sat Jul 21 19:09:31 [clientcursormon] mem (MB) res:4 virt:2627 mapped:80
