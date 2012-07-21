@@ -17,8 +17,8 @@ from os import path
 PORTS_ONE = {"PRIMARY":"27117", "SECONDARY":"27118", "SECONDARY2":"27119", 
     "CONFIG":"27220", "MONGOS":"27217"}
 
-
-SETUP_DIR = path.expanduser("~/wastesometime")
+PWD = os.getcwd()
+SETUP_DIR = path.expanduser(PWD)
 DEMO_SERVER_DATA = SETUP_DIR + "/data"
 DEMO_SERVER_LOG = SETUP_DIR + "/logs"
 MONGOD_KSTR = " --dbpath " + DEMO_SERVER_DATA
@@ -125,7 +125,6 @@ def start_cluster(sharded=False):
 	"""
 	# Kill all spawned mongods
 	killAllMongoProc('localhost', PORTS_ONE)
-	killAllMongoProc('localhost', PORTS_TWO)
 
 	# Kill all spawned mongos
 	killMongosProc()
