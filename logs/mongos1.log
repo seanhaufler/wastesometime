@@ -1,0 +1,66 @@
+
+
+***** SERVER RESTARTED *****
+
+
+Sat Jul 21 13:56:10 mongos db version v2.0.6, pdfile version 4.5 starting (--help for usage)
+Sat Jul 21 13:56:10 git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Sat Jul 21 13:56:10 build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sat Jul 21 13:56:11 [Balancer] about to contact config servers and shards
+Sat Jul 21 13:56:11 [websvr] admin web console waiting for connections on port 28217
+Sat Jul 21 13:56:11 [mongosMain] waiting for connections on port 27217
+Sat Jul 21 13:56:11 [Balancer] config servers and shards contacted successfully
+Sat Jul 21 13:56:11 [Balancer] balancer id: Admins-MacBook-Pro.local:27217 started at Jul 21 13:56:11
+Sat Jul 21 13:56:11 [Balancer] created new distributed lock for balancer on localhost:27220 ( lock timeout : 900000, ping interval : 30000, process : 0 )
+Sat Jul 21 13:56:11 [Balancer] creating WriteBackListener for: localhost:27220 serverID: 500aed3b6507c1729173ea6b
+Sat Jul 21 13:56:11 [LockPinger] creating distributed lock ping thread for localhost:27220 and process Admins-MacBook-Pro.local:27217:1342893371:16807 (sleeping for 30000ms)
+Sat Jul 21 13:56:11 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed3b6507c1729173ea6c
+Sat Jul 21 13:56:11 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:56:12 [mongosMain] connection accepted from 127.0.0.1:50695 #1
+Sat Jul 21 13:56:12 [conn1] couldn't find database [admin] in config db
+Sat Jul 21 13:56:12 [conn1] 	 put [admin] on: config:localhost:27220
+Sat Jul 21 13:56:12 [conn1] end connection 127.0.0.1:50695
+Sat Jul 21 13:56:21 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed456507c1729173ea6d
+Sat Jul 21 13:56:21 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:56:31 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed4f6507c1729173ea6e
+Sat Jul 21 13:56:31 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:56:41 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed596507c1729173ea6f
+Sat Jul 21 13:56:41 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:56:49 [mongosMain] connection accepted from 127.0.0.1:50708 #2
+Sat Jul 21 13:56:49 [conn2] starting new replica set monitor for replica set waste-some-time with seed of localhost:27117
+Sat Jul 21 13:56:49 [conn2] successfully connected to seed localhost:27117 for replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] changing hosts to { 0: "localhost:27117", 1: "localhost:27119", 2: "localhost:27118" } from waste-some-time/
+Sat Jul 21 13:56:49 [conn2] trying to add new host localhost:27117 to replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] successfully connected to new host localhost:27117 in replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] trying to add new host localhost:27118 to replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] successfully connected to new host localhost:27118 in replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] trying to add new host localhost:27119 to replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] successfully connected to new host localhost:27119 in replica set waste-some-time
+Sat Jul 21 13:56:49 [conn2] replica set monitor for replica set waste-some-time started, address is waste-some-time/localhost:27117,localhost:27118,localhost:27119
+Sat Jul 21 13:56:49 [ReplicaSetMonitorWatcher] starting
+Sat Jul 21 13:56:49 [conn2] going to add shard: { _id: "waste-some-time", host: "waste-some-time/localhost:27117,localhost:27118,localhost:27119" }
+Sat Jul 21 13:56:49 [conn2] end connection 127.0.0.1:50708
+Sat Jul 21 13:56:51 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed636507c1729173ea70
+Sat Jul 21 13:56:51 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:57:01 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed6d6507c1729173ea71
+Sat Jul 21 13:57:01 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:57:11 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed776507c1729173ea72
+Sat Jul 21 13:57:11 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:57:21 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed816507c1729173ea73
+Sat Jul 21 13:57:21 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:57:31 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed8b6507c1729173ea74
+Sat Jul 21 13:57:31 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:57:41 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed956507c1729173ea75
+Sat Jul 21 13:57:41 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:57:51 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aed9f6507c1729173ea76
+Sat Jul 21 13:57:51 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:58:01 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aeda96507c1729173ea77
+Sat Jul 21 13:58:01 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:58:11 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aedb36507c1729173ea78
+Sat Jul 21 13:58:11 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:58:21 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aedbd6507c1729173ea79
+Sat Jul 21 13:58:21 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:58:31 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aedc76507c1729173ea7a
+Sat Jul 21 13:58:31 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
+Sat Jul 21 13:58:41 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' acquired, ts : 500aedd16507c1729173ea7b
+Sat Jul 21 13:58:41 [Balancer] distributed lock 'balancer/Admins-MacBook-Pro.local:27217:1342893371:16807' unlocked. 
