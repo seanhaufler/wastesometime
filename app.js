@@ -5,6 +5,8 @@
 
 var express = require('express')
   , routes = require('./routes')
+  , less = require('less')
+  , lessMiddleware = require('less-middleware')
   , http = require('http');
 
 var app = express();
@@ -17,6 +19,10 @@ app.configure(function(){
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(lessMiddleware({
+    src: __dirname + '/public',
+    compress: true
+  }));
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
 });
