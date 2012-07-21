@@ -7,7 +7,9 @@ var express = require('express')
   , routes = require('./routes')
   , less = require('less')
   , lessMiddleware = require('less-middleware')
-  , http = require('http');
+  , http = require('http')
+  , underscore = require('underscore')._
+  , backbone = require('backbone');
 
 var app = express();
 
