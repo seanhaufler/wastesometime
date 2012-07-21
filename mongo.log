@@ -1,0 +1,17 @@
+
+
+***** SERVER RESTARTED *****
+
+
+Sat Jul 21 14:39:04 [initandlisten] MongoDB starting : pid=35781 port=27117 dbpath=/Users/aayushu/wastesometime/data 64-bit host=Admins-MacBook-Pro.local
+Sat Jul 21 14:39:04 [initandlisten] db version v2.0.6, pdfile version 4.5
+Sat Jul 21 14:39:04 [initandlisten] git version: e1c0cbc25863f6356aa4e31375add7bb49fb05bc
+Sat Jul 21 14:39:04 [initandlisten] build info: Darwin erh2.10gen.cc 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386 BOOST_LIB_VERSION=1_40
+Sat Jul 21 14:39:04 [initandlisten] options: { dbpath: "/Users/aayushu/wastesometime/data", fork: true, logappend: true, logpath: "/Users/aayushu/wastesometime/mongo.log", port: 27117 }
+Sat Jul 21 14:39:04 [initandlisten] journal dir=/Users/aayushu/wastesometime/data/journal
+Sat Jul 21 14:39:04 [initandlisten] recover : no journal files present, no recovery needed
+Sat Jul 21 14:39:04 [websvr] admin web console waiting for connections on port 28117
+Sat Jul 21 14:39:04 [initandlisten] waiting for connections on port 27117
+Sat Jul 21 14:39:15 [initandlisten] connection accepted from 127.0.0.1:51640 #1
+Sat Jul 21 14:39:23 [conn1] end connection 127.0.0.1:51640
+Sat Jul 21 14:40:04 [clientcursormon] mem (MB) res:3 virt:2434 mapped:0
