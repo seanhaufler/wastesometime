@@ -17,7 +17,8 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/", HomeHandler),
             (r"/articles/", ArticleHandler),
-            (r"/videos/", VideoHandler)
+            (r"/videos/", VideoHandler),
+            (r"/frame/", FrameHandler)
         ]
         conn = pymongo.Connection()
         
@@ -39,6 +40,11 @@ class HomeHandler(BaseHandler):
 	
     def get(self):
         self.render("home.html")
+
+class FrameHandler(BaseHandler):
+
+    def get(self):
+        self.render("frametest.html")
 
 class ArticleHandler(BaseHandler):
 	

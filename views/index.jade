@@ -4,6 +4,7 @@ block content
   div#container
     div#header
       img#logo(src='/images/logo.png')
+      dev#clockCenter
       div#minuteRotator
         div#minuteHand
       div#hourRotator
@@ -17,16 +18,18 @@ block content
       button Go!
     div#footer
       img#footerImage(src='/images/footer.png')
-      p Made with love by
+      p Made with love by&nbsp;
         a(href='https://twitter.com/bethanysum') four
-        | ,
+        | ,&nbsp;
         a(href='https://twitter.com/seanhaufler') really
-        | ,
+        | ,&nbsp;
         a(href='https://twitter.com/amidvidy') cool
-        | ,
+        | ,&nbsp;
         a(href='https://twitter.com/aayushu') devs.
     script
       $(function() {
         var currentPage = HomePage.getInstance();
       });
+  div#container2
+    div#tiles
 

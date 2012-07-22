@@ -37,7 +37,7 @@ var HomePage = Backbone.View.extend({
 
   animateHomePage: function() {
     var self = this;
-    $('body').animate({
+    $('#container').animate({
       top: '-=1000'
     }, 2000, function() {
       self.generateToolbar();

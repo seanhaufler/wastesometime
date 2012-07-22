@@ -22,7 +22,10 @@ wst.ArticleCollection = Backbone.Collection.extend({
     },
     model: wst.Article,
     url: function() {
-        return '/articles/?' + $.params(this.queryParams, true);
+        return '/articles/?' + $.param(this.queryParams, true);
+    },
+    getRandom: function() {
+        return this.at(Math.floor(Math.random()*this.length));
     }
 });
 
@@ -35,7 +38,7 @@ wst.VideoCollection = Backbone.Collection.extend({
     },
     model: wst.Video,
     url: function() {
-        return '/videos/?' + $.params(this.queryParams, true);
+        return '/videos/?' + $.param(this.queryParams, true);
     } 
 });
 
@@ -47,18 +50,44 @@ wst.Timer = Backbone.Model.extend({
 wst.TimerView = Backbone.Model.extend({
 });
 
-/** App container. */
-wst.App = Backbone.View.extend({
-
+wst.TimeInputView = Backbone.View.extend({
+    el: '#input',
     initialize: function() {
         var that = this;
         // jQuery
         this.$timeSubmit = $('#timeSubmit');
         this.$timeInput = $('#timeInput');
-
+        
         this.$timeSubmit.click(function() {
             var time = parseInt(that.$timeInput.val());
-            console.log(time);
+            wst.Events.trigger("app:timeChosen", time)
         });
+    },
+    show: function() {
+        this.$el.show();
+    },
+    hide: function(millis) {
+        this.$el.hide(millis || 0);
     }
-})
+});
+wst.PickerView = Backbone.Model.extend({
+    el: '#picker',
+    initialize: function (opts) {
+    }
+});
+wst.Picker
+/** App container. */
+wst.App = Backbone.View.extend({
+
+    initialize: function() {
+        this.timeInput = new wst.TimeInputView();
+        
+        // Events
+        wst.Events.on("app:timeChosen", this.loadChoices, this);
+    },
+    loadChoices: function(time) {
+        console.log(time)
+        this.timeInput.hide(1000);
+//        this.articles = new wsc.ArticleCollection(false, {
+    }
+});

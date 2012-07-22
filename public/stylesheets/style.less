@@ -49,10 +49,7 @@
 body {
   padding: 50px;
   background-color: #ecede1;
-
-  #logo { 
-    /* margin-left: 30px; */
-  }
+  #logo { margin-left: -30px; }
   #scrollBar {
     width: 700px;
     height: 10px;
@@ -81,6 +78,16 @@ body {
     left: 434px;
     position: absolute;
     .rotation(66deg);
+  }
+  #clockCenter {
+    top: 90px;
+    left: 433px;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background-color: #21A380;
+    z-index: 10;
+    .rounded(5px);
   }
   #minuteHand, #hourHand{
     height: 23px;
@@ -121,6 +128,7 @@ a {
 color: #00B7FF;
 }
 
+#footer p { text-align: center; }
 #footerImage {
   margin-left: -197px;
   margin-top: 80px;
@@ -473,4 +481,8 @@ margin-top: 1px;
 .ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
 .ui-slider-vertical .ui-slider-range-min { bottom: 0; }
 .ui-slider-vertical .ui-slider-range-max { top: 0; }
+
+
+
+/** Selection Page */
 
