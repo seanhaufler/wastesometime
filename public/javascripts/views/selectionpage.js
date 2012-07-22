@@ -1,5 +1,5 @@
 
-var SelectionPage = Backbone.View.extend({
+var SelectionPageView = Backbone.View.extend({
   events: {
     "click .tile": "viewItem"
   },

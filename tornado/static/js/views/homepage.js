@@ -10,6 +10,7 @@ var HomePage = Backbone.View.extend({
     this.scrollBar = $('#scrollBar', this.el);
     this.number = $('#timeCounter .number', this.el);
     this.plural = $('#timeCounter .plural', this.el);
+    this.minutes = 20;
     var self = this;
     this.scrollBar.slider({ value: 100,
       min: 0,
@@ -39,15 +40,17 @@ var HomePage = Backbone.View.extend({
     $('#container').animate({
       top: '-=1000'
     }, 2000, function() {
-      self.generateToolbar();
+      self.generateSelectionPageView();
     });
   },
 
   generateToolbar: function() {
     var url = 'http://techcrunch.com';
     this.toolbar = new ToolBarView({url: url});
+  },
 
-
+  generateSelectionPageView: function() {
+    this.selectionPage = new SelectionPageView({ content: this.content });
   },
 
   pluralize: function() {
@@ -60,8 +63,11 @@ var HomePage = Backbone.View.extend({
 
   transition: function() {
     console.log('asdfasdfasd');
-    this.animateHomePage();
-
+    var self = this;
+    this.content = new Bucket(false, { maxTime: this.minutes });
+    this.content.fetch({ success: function() {
+      self.animateHomePage();
+    }});
   }
 }, {
   getInstance: function() {
@@ -75,18 +81,23 @@ var HomePage = Backbone.View.extend({
 
 var Content = Backbone.Model.extend({
     initialize: function() {
+      console.log(this);
         if (this.set('duration')) {
             this.set('type', 'video');
+            this.set('iconUrl', '/static/images/video_icon.png');
+            this.set('url', this.get('links'));
         } else {
             this.set('type', 'article');
+            this.set('iconUrl', '/static/images/article_icon.png');
         }
     }
 });
 
 var Bucket = Backbone.Collection.extend({
     initialize: function(models, opts) {
-        this.maxTime = opts.maxTime;
+      this.maxTime = opts.maxTime;
     },
+    model: Content,
     url: function() {
         return '/search/?maxTime=' + this.maxTime;
     }

@@ -10,6 +10,7 @@
 <script type="text/javascript" src="/static/js/third_party/backbone-min.js"></script>
 <script type="text/javascript" src="/static/js/views/homepage.js"></script>
 <script type="text/javascript" src="/static/js/views/toolbar.js"></script>
+<script type="text/javascript" src="/static/js/views/selection-page.js"></script>
 </head>
 <body>
 <div id="container">
@@ -44,15 +45,31 @@
       </div>
       <iframe seamless="seamless"  id="pageFrame" border="0" frameborder="0" hspace="0" vspace="0" marginheight="0" marginwidth="0" src="<%= url %>"></iframe>
     </script>
+    <script type="text/template" id ="fuck-this-template">
+      <div id="selection-page">
+        <div class="header">
+          <img src="/static/images/selection_header.png"/>
+        </div>
+        <% _.each(list, function(item, i) { %>
+          <div class="content-list">
+            <div class="content-piece">
+               <span class="number"><%= i %></span>
+               <img class="icon" src="<%= item.iconUrl %>"/>
+               <div class="content-details">
+                 <div class="title"><%= item.title %></div>
+                 <div class="url"><%= item.url %>/div>
+               </div>
+               <div class="horizontal-bar"></div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </script>
 	<script type="text/javascript">
     $(function() {
         var currentPage = HomePage.getInstance();
     });
 	</script>
-</div>
-<div id="container2">
-  <div id="titles">
-  </div>
 </div>
 </body>
 </html>
