@@ -49,16 +49,16 @@ wst.TimerView = Backbone.Model.extend({
 
 /** App container. */
 wst.App = Backbone.View.extend({
-    events: {
-        "click #timeSubmit": "getContent" 
-    },
+
     initialize: function() {
+        var that = this;
         // jQuery
-        this.$submitButton = $('#timeSubmit');
+        this.$timeSubmit = $('#timeSubmit');
         this.$timeInput = $('#timeInput');
-    },
-    getContent: function() {
-        var time = parseInt(this.$timeInput.val());
-        console.log(time)
+
+        this.$timeSubmit.click(function() {
+            var time = parseInt(that.$timeInput.val());
+            console.log(time);
+        });
     }
 })
