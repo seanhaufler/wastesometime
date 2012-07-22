@@ -18,6 +18,7 @@ var HomePage = Backbone.View.extend({
       step: 2,
       slide: function(event, ui) {
         self.minutes = parseInt(ui.value/5* .6);
+        self.pluralize();
         self.innerScroll.css('width', ui.value/5 + '%');
         self.number.text( self.minutes );
         var degrees = parseInt(ui.value/5*.6*6);
