@@ -66,6 +66,7 @@ var HomePage = Backbone.View.extend({
     var self = this;
     this.content = new Bucket(false, { maxTime: this.minutes });
     this.content.fetch({ success: function() {
+        console.log(self.content);
       self.animateHomePage();
     }});
   }
@@ -78,11 +79,9 @@ var HomePage = Backbone.View.extend({
     return this.instance;
   }
 });
-
 var Content = Backbone.Model.extend({
     initialize: function() {
-      console.log(this);
-        if (this.set('duration')) {
+         if (this.has('duration')) {
             this.set('type', 'video');
             this.set('iconUrl', '/static/images/video_icon.png');
             this.set('url', this.get('links'));
@@ -95,7 +94,7 @@ var Content = Backbone.Model.extend({
 
 var Bucket = Backbone.Collection.extend({
     initialize: function(models, opts) {
-      this.maxTime = opts.maxTime;
+      this.maxTime = opts.maxTime * 60;
     },
     model: Content,
     url: function() {
