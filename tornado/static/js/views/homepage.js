@@ -2,15 +2,18 @@
 var HomePage = Backbone.View.extend({
 
   events: {
-    "click button": "transition"
+    "click .button": "transition"
   },
 
   initialize: function() {
-    console.log('init');
     this.innerScroll = $('#innerScroll', this.el);
     this.scrollBar = $('#scrollBar', this.el);
     this.number = $('#timeCounter .number', this.el);
     this.plural = $('#timeCounter .plural', this.el);
+    this.button = $('.button', this.el);
+
+    console.log('asdf');
+    console.log(button);
     var self = this;
     this.scrollBar.slider({ value: 100,
       min: 0,

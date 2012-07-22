@@ -2,11 +2,10 @@
 var HomePage = Backbone.View.extend({
 
   events: {
-    "click button": "transition"
+    "click .button": "transition"
   },
 
   initialize: function() {
-    console.log('init');
     this.innerScroll = $('#innerScroll', this.el);
     this.scrollBar = $('#scrollBar', this.el);
     this.number = $('#timeCounter .number', this.el);
