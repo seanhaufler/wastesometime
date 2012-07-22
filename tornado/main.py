@@ -1,16 +1,29 @@
 # Python
 import os
+import json
 
 # Tornado
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 
+# Mongo
+import pymongo
+from bson import json_util
+
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/", HomeHandler),
+            (r"/articles/", ArticleHandler),
+            #(r"/videos/", VideoHandler)
         ]
+        conn = pymongo.Connection()
+        
+        self.content = conn.content
+        self.articles = self.content.articles
+        self.videos = self.content.videos
+
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
             static_path=os.path.join(os.path.dirname(__file__), "static"),
@@ -23,6 +36,28 @@ class BaseHandler(tornado.web.RequestHandler):
 class HomeHandler(BaseHandler):
     def get(self):
         self.render("home.html")
+
+class ArticleHandler(BaseHandler):
+    def get(self):
+        minLenInt = 200
+        maxLenInt = 400
+        try:
+            minLenInt = int(self.get_argument("minLen"))
+            maxLenInt = int(self.get_argument("maxLen"))
+        except:
+            pass
+        coll = self.application.articles
+        query = {"$and": [{"wordcount": {"$gt": minLenInt}},
+                          {"wordcount": {"$lt": maxLenInt}}]}
+        docs = coll.find(query)
+        result_arr = []
+        for doc in docs:
+            result_arr.append(doc)
+        self.write(json.dumps(result_arr, default=json_util.default))
+
+
+#class VideoHandler(BaseHandler):
+
 
 def main(port='8080', address='127.0.0.1'):
     http_server = tornado.httpserver.HTTPServer(Application())
