@@ -11,20 +11,21 @@ var SelectionPageView = Backbone.View.extend({
   getHostname: function(str) {
     var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
     return str.match(re)[1].toString().split('.')[1] //[1].toString();
-  }
+  },
 
   render: function() {
     $('#container').hide();
+    var self = this;
     if (this.options.content.length > 0) {
       var listObj = {
         list: this.options.content.map(function (model) {
           return {
-            url: model.get('url'),
+            url: self.getHostname(model.get('url')),
             iconUrl: model.get('iconUrl'),
             title: model.get('title')
           }
         }),
-        minutes: this.minutes
+        minutes: parseInt(this.minutes/60)
       };
       console.log(listObj);
 
