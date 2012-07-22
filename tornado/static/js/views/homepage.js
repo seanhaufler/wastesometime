@@ -71,3 +71,22 @@ var HomePage = Backbone.View.extend({
     return this.instance;
   }
 });
+
+var Content = Backbone.Model.extend({
+    initialize: function() {
+        if (this.set('duration')) {
+            this.set('type', 'video');
+        } else {
+            this.set('type', 'article');
+        }
+    }
+});
+
+var Bucket = Backbone.Collection.extend({
+    initialize: function(models, opts) {
+        this.maxTime = opts.maxTime;
+    },
+    url: function() {
+        return '/search/?maxTime=' + this.maxTime;
+    }
+});
