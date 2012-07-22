@@ -13,6 +13,7 @@ var ToolBarView = Backbone.View.extend({
             if (self.totalTime <= 0) {
                 // put whatever you want here.
                 alert("YOU ARE OUT OF TIME!!!");
+                window.location.replace('/');
             } else {
                 self.totalTime = self.totalTime - 1;
                 self.setTimeAmount(self.totalTime);
@@ -26,13 +27,7 @@ var ToolBarView = Backbone.View.extend({
       console.log('bored');
       console.log(this.boredButton);
       this.boredButton.click(function() {
-        console.log('click');
-        var bucket = new Bucket(false, self.totalTime);
-        bucket.fetch({ success: function() {
-        new SelectionPageView({ content: bucket });
-        }
-      });
-
+          window.location.replace('/');
       });
     },
     render: function() {
