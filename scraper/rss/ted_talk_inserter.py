@@ -28,7 +28,12 @@ for row in rows:
         item['source'] = 'TED'
         item['date'] = cells[0].text
         item['title'] = cells[2].text
-        item['duration'] = cells[3].text
+        time_arr = cells[3].text.split(':')
+        if len(time_arr) == 2:
+            sec_time = int(time_arr[0])*60 + int(time_arr[1])
+        else:         #hours
+            sec_time = int(time_arr[0])*3600 + int(time_arr[1])*60 + int(time_arr[2])
+        item['duration'] = sec_time
         video_content_coll.update({'_id': _id}, item, upsert=True)
     except:
         continue
