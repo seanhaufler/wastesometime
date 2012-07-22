@@ -9,8 +9,7 @@ var SelectionPageView = Backbone.View.extend({
   },
 
   getHostname: function(str) {
-    var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
-    return str.match(re)[1].toString().split('.')[1] //[1].toString();
+    return (str.match(/:\/\/(.[^/]+)/)[1]).replace('www.','');
   }
 
   render: function() {
