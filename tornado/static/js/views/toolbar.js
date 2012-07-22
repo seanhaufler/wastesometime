@@ -17,7 +17,23 @@ var ToolBarView = Backbone.View.extend({
                 self.totalTime = self.totalTime - 1;
                 self.setTimeAmount(self.totalTime);
             }
-        }, 1000 * 60)
+        }, 1000 * 60);
+        this.decorate();
+    },
+    decorate: function() {
+      this.boredButton = $('#boredImage');
+      var self = this;
+      console.log('bored');
+      console.log(this.boredButton);
+      this.boredButton.click(function() {
+        console.log('click');
+        var bucket = new Bucket(false, self.totalTime);
+        bucket.fetch({ success: function() {
+        new SelectionPageView({ content: bucket });
+        }
+      });
+
+      });
     },
     render: function() {
         $('#container').hide();
