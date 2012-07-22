@@ -4,8 +4,21 @@ var SelectionPageView = Backbone.View.extend({
   initialize: function(options) {
     this.template = _.template($('#fuck-this-template').html());
     this.options = options;
-    this.minutes = options.content.maxTime;
+    this.minutes = parseInt(options.content.maxTime/60);
     this.render();
+    this.decorate();
+  },
+
+  decorate: function() {
+    var self = this;
+    $('.content-list').click(function() {
+      var node = $(this);
+      var url = node.find('.url').text();
+      self.toolbar = new ToolBarView({
+        url: url,
+        time: self.minutes
+      });
+    });
   },
 
   getHostname: function(str) {
@@ -20,12 +33,12 @@ var SelectionPageView = Backbone.View.extend({
       var listObj = {
         list: this.options.content.map(function (model) {
           return {
-            url: self.getHostname(model.get('url')),
+            url: model.get('url'),
             iconUrl: model.get('iconUrl'),
             title: model.get('title')
           }
         }),
-        minutes: parseInt(this.minutes/60)
+        minutes: this.minutes
       };
       console.log(listObj);
 
