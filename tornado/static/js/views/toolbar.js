@@ -27,6 +27,7 @@ var ToolBarView = Backbone.View.extend({
         this.$el.css('height', '100%');
         console.log(this.$el);
         console.log(this.$el.css('padding'));
+        this.$el.empty();
         $(this.html({url: this.url})).appendTo(this.$el);
     },
     setTimeAmount: function(amt) {
