@@ -155,10 +155,20 @@ color: #21a380;
     background-image: url('/static/images/top_bar_bg.png');
     background-repeat:repeat-x;
 
-    .logo:hover { cursor: pointer; }
+    .logo:hover {
+      cursor: pointer; 
+      float: left;
+    }
     .bored { float: right;
-      margin-right: 40px;
+      margin-right: 20px;
       &:hover { cursor: pointer; }
+      margin-top: 5px;
+    }
+    #countdown {
+      font-size: 18px;
+      float: right;
+      color: #707070;
+      margin: 15px;
     }
 }
 #pageFrame {
