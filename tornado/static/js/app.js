@@ -2,19 +2,19 @@
 var wst = {}
 
 /** Centralized event routing trick. */
-var wst.Events = _.extend({}, Backbone.Events);
+wst.Events = _.extend({}, Backbone.Events);
 
 /** Represents an article. */
-var wst.Article = Backbone.Model.extend({
+wst.Article = Backbone.Model.extend({
     
 });
 
 /** Represents a video. */
-var wst.Video = Backbone.Model.extend({
+wst.Video = Backbone.Model.extend({
 });
 
 /** Represents a collection of articles. */
-var wst.ArticleCollection = Backbone.Collection.extend({
+wst.ArticleCollection = Backbone.Collection.extend({
     initialize: function(models, opts) {
         this.queryParams = {}
         this.queryParams.minLen = opts.minLen;
@@ -27,7 +27,7 @@ var wst.ArticleCollection = Backbone.Collection.extend({
 });
 
 /** Represents a collection of videos. */
-var wst.VideoCollection = Backbone.Collection.extend({
+wst.VideoCollection = Backbone.Collection.extend({
     initialize: function(models, opts) {
         this.queryParams = {}
         this.queryParams.minTime = opts.minTime;
@@ -40,15 +40,15 @@ var wst.VideoCollection = Backbone.Collection.extend({
 });
 
 /** Represents the underlying timer. */
-var wst.Timer = Backbone.Model.extend({
+wst.Timer = Backbone.Model.extend({
 });
 
 /** Represents a timer view. */
-var wst.TimerView = Backbone.Model.extend({
+wst.TimerView = Backbone.Model.extend({
 });
 
 /** App container. */
-var wst.App = Backbone.View.extend({
+wst.App = Backbone.View.extend({
     initialize: function() {
         // jQuery
         $submitButton = $('#timeSubmit');
