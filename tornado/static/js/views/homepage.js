@@ -2,15 +2,16 @@
 var HomePage = Backbone.View.extend({
 
   events: {
-    "click button": "transition"
+    "click .button": "transition"
   },
 
   initialize: function() {
-    console.log('init');
     this.innerScroll = $('#innerScroll', this.el);
     this.scrollBar = $('#scrollBar', this.el);
     this.number = $('#timeCounter .number', this.el);
     this.plural = $('#timeCounter .plural', this.el);
+    this.button = $('.button', this.el);
+
     var self = this;
     this.scrollBar.slider({ value: 100,
       min: 0,
@@ -45,8 +46,8 @@ var HomePage = Backbone.View.extend({
   },
 
   generateToolbar: function() {
-    console.log('blah');
-//    this.toolbar = new ToolBarView();
+    var url =  'http://google.com';//this.getContentUrl();
+    this.toolbar = new ToolBarView(url);
 
   },
 
@@ -59,9 +60,7 @@ var HomePage = Backbone.View.extend({
   },
 
   transition: function() {
-    console.log('asdfasdfasd');
     this.animateHomePage();
-
   }
 }, {
   getInstance: function() {

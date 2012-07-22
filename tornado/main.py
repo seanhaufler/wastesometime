@@ -13,17 +13,17 @@ import pymongo
 from bson import json_util
 
 class Application(tornado.web.Application):
-	
+
     def __init__(self):
         handlers = [
             (r"/", HomeHandler),
             (r"/articles/", ArticleHandler),
             (r"/videos/", VideoHandler),
-            (r"/frame/", FrameHandler)
             (r"/search/", DocSearchHandler)
-
+            ]
+            
         conn = pymongo.Connection()
-        
+
         self.content = conn.content
         self.articles = self.content.articles
         self.videos = self.content.videos
@@ -39,7 +39,7 @@ class BaseHandler(tornado.web.RequestHandler):
     pass
 
 class HomeHandler(BaseHandler):
-	
+
     def get(self):
         self.render("home.html")
 
@@ -49,7 +49,7 @@ class FrameHandler(BaseHandler):
         self.render("frametest.html")
 
 class ArticleHandler(BaseHandler):
-	
+
     def get(self):
        	minLenInt = 200
        	maxLenInt = 400
@@ -69,17 +69,17 @@ class ArticleHandler(BaseHandler):
         self.write(json.dumps(result_arr, default=json_util.default))
 
 class VideoHandler(BaseHandler):
-	
+
     def get(self):
         minTime = 200
         maxTime = 400
-		
+
 	try:
             minTime = int(self.get_argument("minTime"))
 	    maxTime = int(self.get_argument("maxTime"))
 	except:
 	    pass
-			
+
 	coll = self.application.videos
 	query = {"$and": [{"duration": {"$gte": minTime}},
                           {"duration": {"$lte": maxTime}}]}
@@ -89,17 +89,48 @@ class VideoHandler(BaseHandler):
             result_arr.append(doc)
 
         self.write(json.dumps(result_arr, default=json_util.default))
-        
+
 class DocSearchHandler(BaseHandler):
-    
+
     def get(self):
         maxTime = 300
-        
+
         try:
             maxTime = int(self.get_argument('maxTime'))
         except:
             pass
+<<<<<<< HEAD
+
+=======
+            
+        #scaling_factor = 2/3
+        coll = self.application.videos
+        query = {"duration": {"$lte": maxTime}}
+        docs = coll.find(query).sort('duration', pymongo.DESCENDING)
+        result_arr = []
+        counter = 0
         
+        while counter < docs.count() and counter < 3:
+            doc = docs.next()
+            result_arr.append(doc)
+            counter += 1
+            
+        maxTime *= 200/60                #200 wpm
+        coll = self.application.articles
+        query = {"$and": [{"wordcount": {"$gt": 100}},
+                {"wordcount": {"$lte": maxTime}}]}
+        docs = coll.find(query).sort('wordcount', pymongo.DESCENDING)
+        counter = 0
+        
+        while counter < docs.count() and counter < 3:
+            doc = docs.next()
+            result_arr.append(doc)
+            counter += 1
+                
+        self.write(json.dumps(result_arr, default=json_util.default))
+        
+        """  Code for random results 
+>>>>>>> edited SearchHandler to fill up time
         coll = self.application.videos
         query = {"$and": [{"duration": {"$gt": 0}},
                 {"duration": {"$lte": maxTime}}]}
@@ -107,7 +138,7 @@ class DocSearchHandler(BaseHandler):
         video_result_arr = []
         for doc in docs:
             video_result_arr.append(doc)
-            
+
         maxTime *= 200/60                #200 wpm
         coll = self.application.articles
         query = {"$and": [{"wordcount": {"$gt": 50}},
@@ -116,26 +147,32 @@ class DocSearchHandler(BaseHandler):
         article_result_arr = []
         for doc in docs:
             article_result_arr.append(doc)
-    
+
         video_len = len(video_result_arr) -1
         vid_one = random.randint(0, video_len)
         vid_two = random.randint(0, video_len)
-        
+
         results = []
         results.append(video_result_arr[vid_one])
         results.append(video_result_arr[vid_two])
-        
+
         article_len = len(article_result_arr) -1
         art_one = random.randint(0, article_len)
         art_two = random.randint(0, article_len)
         art_three = random.randint(0, article_len)
-        
+
         results.append(article_result_arr[art_one])
         results.append(article_result_arr[art_two])
         results.append(article_result_arr[art_three])
-        
+<<<<<<< HEAD
+
         self.write(json.dumps(results, default=json_util.default))
-        	
+
+=======
+  
+        self.write(json.dumps(results, default=json_util.default))
+        """    	
+>>>>>>> edited SearchHandler to fill up time
 
 def main(port='8080', address='127.0.0.1'):
     http_server = tornado.httpserver.HTTPServer(Application())
