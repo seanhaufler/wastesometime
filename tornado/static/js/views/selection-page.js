@@ -4,6 +4,7 @@ var SelectionPageView = Backbone.View.extend({
   initialize: function(options) {
     this.template = _.template($('#fuck-this-template').html());
     this.options = options;
+    this.minutes = options.content.maxTime;
     this.render();
   },
 
@@ -22,11 +23,12 @@ var SelectionPageView = Backbone.View.extend({
             iconUrl: model.get('iconUrl'),
             title: model.get('title')
           }
-        })
+        }),
+        minutes: this.minutes
       };
       console.log(listObj);
 
-      $(this.template(listObj)).appendTo(this.$el);
+      $(this.template(listObj)).appendTo(this.$el).hide().fadeIn(800);
       }
   }
 });
