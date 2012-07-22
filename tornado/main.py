@@ -123,6 +123,10 @@ class DocSearchHandler(BaseHandler):
             doc = docs.next()
             result_arr.append(doc)
             counter += 1
+            
+        vid1 = result_arr[1]
+        result_arr[1] = result_arr[4]
+        result_arr[4] = vid1
 
         self.write(json.dumps(result_arr, default=json_util.default))
 
