@@ -7,7 +7,13 @@ var ToolBarView = Backbone.View.extend({
         this.render();
     },
     render: function() {
-        $('#container').hide()
+        $('#container').hide();
+        console.log(this.url);
+        this.$el.css('padding', '0px');
+        this.$el.css('width', '100%');
+        this.$el.css('height', '100%');
+        console.log(this.$el);
+        console.log(this.$el.css('padding'));
         $(this.html({url: this.url})).appendTo(this.$el);
     }
 });
