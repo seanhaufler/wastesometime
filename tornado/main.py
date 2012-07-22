@@ -127,7 +127,6 @@ class DocSearchHandler(BaseHandler):
         self.write(json.dumps(result_arr, default=json_util.default))
         
         """  Code for random results 
->>>>>>> edited SearchHandler to fill up time
         coll = self.application.videos
         query = {"$and": [{"duration": {"$gt": 0}},
                 {"duration": {"$lte": maxTime}}]}
@@ -161,15 +160,14 @@ class DocSearchHandler(BaseHandler):
         results.append(article_result_arr[art_one])
         results.append(article_result_arr[art_two])
         results.append(article_result_arr[art_three])
-<<<<<<< HEAD
+
 
         self.write(json.dumps(results, default=json_util.default))
 
-=======
+
   
         self.write(json.dumps(results, default=json_util.default))
         """    	
->>>>>>> edited SearchHandler to fill up time
 
 def main(port='8080', address='127.0.0.1'):
     http_server = tornado.httpserver.HTTPServer(Application())
