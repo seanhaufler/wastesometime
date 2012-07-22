@@ -21,7 +21,7 @@ class Application(tornado.web.Application):
             (r"/videos/", VideoHandler),
             (r"/search/", DocSearchHandler)
             ]
-
+            
         conn = pymongo.Connection()
 
         self.content = conn.content
@@ -99,7 +99,38 @@ class DocSearchHandler(BaseHandler):
             maxTime = int(self.get_argument('maxTime'))
         except:
             pass
+<<<<<<< HEAD
 
+=======
+            
+        #scaling_factor = 2/3
+        coll = self.application.videos
+        query = {"duration": {"$lte": maxTime}}
+        docs = coll.find(query).sort('duration', pymongo.DESCENDING)
+        result_arr = []
+        counter = 0
+        
+        while counter < docs.count() and counter < 3:
+            doc = docs.next()
+            result_arr.append(doc)
+            counter += 1
+            
+        maxTime *= 200/60                #200 wpm
+        coll = self.application.articles
+        query = {"$and": [{"wordcount": {"$gt": 100}},
+                {"wordcount": {"$lte": maxTime}}]}
+        docs = coll.find(query).sort('wordcount', pymongo.DESCENDING)
+        counter = 0
+        
+        while counter < docs.count() and counter < 3:
+            doc = docs.next()
+            result_arr.append(doc)
+            counter += 1
+                
+        self.write(json.dumps(result_arr, default=json_util.default))
+        
+        """  Code for random results 
+>>>>>>> edited SearchHandler to fill up time
         coll = self.application.videos
         query = {"$and": [{"duration": {"$gt": 0}},
                 {"duration": {"$lte": maxTime}}]}
@@ -133,9 +164,15 @@ class DocSearchHandler(BaseHandler):
         results.append(article_result_arr[art_one])
         results.append(article_result_arr[art_two])
         results.append(article_result_arr[art_three])
+<<<<<<< HEAD
 
         self.write(json.dumps(results, default=json_util.default))
 
+=======
+  
+        self.write(json.dumps(results, default=json_util.default))
+        """    	
+>>>>>>> edited SearchHandler to fill up time
 
 def main(port='8080', address='127.0.0.1'):
     http_server = tornado.httpserver.HTTPServer(Application())
