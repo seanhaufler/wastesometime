@@ -16,6 +16,7 @@ class RssScraper:
         self.feeds = feeds
         self.limit = limit
         self.coll = coll
+        
     def scrape(self):
         for feed in self.feeds:
             parser = feedparser.parse(feed)
@@ -59,7 +60,7 @@ def main():
             50,
             article_data_coll # 50 articles from each for now
         ) 
-        
+
         while True:
             scraper.scrape()
             time.sleep(60 * 10) # sleep for 10 mins
