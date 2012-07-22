@@ -99,9 +99,6 @@ class DocSearchHandler(BaseHandler):
             maxTime = int(self.get_argument('maxTime'))
         except:
             pass
-<<<<<<< HEAD
-
-=======
             
         #scaling_factor = 2/3
         coll = self.application.videos
