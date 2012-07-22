@@ -12,8 +12,6 @@ var HomePage = Backbone.View.extend({
     this.plural = $('#timeCounter .plural', this.el);
     this.button = $('.button', this.el);
 
-    console.log('asdf');
-    console.log(button);
     var self = this;
     this.scrollBar.slider({ value: 100,
       min: 0,
@@ -48,8 +46,8 @@ var HomePage = Backbone.View.extend({
   },
 
   generateToolbar: function() {
-    console.log('blah');
-//    this.toolbar = new ToolBarView();
+    var url =  'http://google.com';//this.getContentUrl();
+    this.toolbar = new ToolBarView(url);
 
   },
 
@@ -62,9 +60,7 @@ var HomePage = Backbone.View.extend({
   },
 
   transition: function() {
-    console.log('asdfasdfasd');
     this.animateHomePage();
-
   }
 }, {
   getInstance: function() {
