@@ -48,6 +48,7 @@ iframe { overflow: hidden; }
 }
 
 body {
+  margin: 0px;
   padding: 50px;
   background-color: #ecede1;
   #logo { margin-left: -30px; }
@@ -150,14 +151,17 @@ color: #21a380;
 #toolbar {
     position: relative;
     top: 0;
-    height: 60px;
+    height: 51px;
     width: 100%;
     background-image: url('/static/images/top_bar_bg.png');
     background-repeat:repeat-x;
+    -webkit-box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, .1);
+    box-shadow: 0px 2px 5px 5px rgba(0, 0, 0, .1);
 
-    .logo:hover {
-      cursor: pointer; 
-      float: left;
+    .logo{
+      margin-left: 20px;
+      margin-top: 7px;
+      &:hover { cursor: pointer; }
     }
     .bored { float: right;
       margin-right: 20px;
