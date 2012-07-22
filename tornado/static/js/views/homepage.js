@@ -44,8 +44,9 @@ var HomePage = Backbone.View.extend({
   },
 
   generateToolbar: function() {
-    console.log('blah');
-//    this.toolbar = new ToolBarView();
+    var url = 'http://techcrunch.com';
+    this.toolbar = new ToolBarView({url: url});
+
 
   },
 

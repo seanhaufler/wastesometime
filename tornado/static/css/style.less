@@ -1,3 +1,4 @@
+iframe { overflow: hidden; }
 .rotation(@deg:5deg){
     -webkit-transform: rotate(@deg);
       -moz-transform: rotate(@deg);
@@ -147,10 +148,18 @@ color: #21a380;
 }
 
 #toolbar {
-    position: relative; 
-    top: 0; 
-    height: 40px; 
+    position: relative;
+    top: 0;
+    height: 50px;
     width: 100%;
+    background-image: url('/static/images/top_bar_bg.png');
+    background-repeat:repeat-x;
+
+    .logo:hover { cursor: pointer; }
+    .bored { float: right;
+      margin-right: 40px;
+      &:hover { cursor: pointer; }
+    }
 }
 #pageFrame {
     width: 100%;
