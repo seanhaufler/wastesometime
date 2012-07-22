@@ -11,6 +11,7 @@ var ToolBarView = Backbone.View.extend({
         var self = this;
         setInterval(function() {
             if (self.totalTime <= 0) {
+                // put whatever you want here.
                 alert("YOU ARE OUT OF TIME!!!");
             } else {
                 self.totalTime = self.totalTime - 1;
