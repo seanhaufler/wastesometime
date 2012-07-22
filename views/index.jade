@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p #{tagline}
+  div#container
+    div#header
+      img#logo(src='/images/logo.png')
+      div#rotator
+        div#clockHand
+      h2#timeCounter
+        span.number 20
+        span.plural  minutes
+      div#scrollBar
+        div#innerScroll
+      h3 How much time do you want to waste?
+    div#footer
+      img#footerImage(src='/images/footer.png')
+      p Made with love by
+        a(href='https://twitter.com/bethanysum') four
+        a(href='https://twitter.com/seanhaufler') really
+        a(href='https://twitter.com/amidvidy') cool
+        a(href='https://twitter.com/aayushu') devs.
+
