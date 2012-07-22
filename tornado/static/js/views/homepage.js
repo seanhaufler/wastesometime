@@ -97,6 +97,7 @@ var Bucket = Backbone.Collection.extend({
       this.maxTime = opts.maxTime * 60;
     },
     model: Content,
+    minutes: parseInt(this.maxTime/60),
     url: function() {
         return '/search/?maxTime=' + this.maxTime;
     }

@@ -15,7 +15,9 @@
 <body>
 <div id="container">
 	<div id="header">
-		<img id="logo" src="/static/images/logo.png"><div id="clockCenter"></div>
+    <a href="/">
+      <img id="logo" src="/static/images/logo.png"><div id="clockCenter"></div>
+    </a>
 		<div id="minuteRotator">
 			<div id="minuteHand">
 			</div>
@@ -47,24 +49,32 @@
       <iframe seamless="seamless"  id="pageFrame" border="0" frameborder="0" hspace="0" vspace="0" marginheight="0" marginwidth="0" src="<%= url %>"></iframe>
     </script>
     <script type="text/template" id ="fuck-this-template">
+    <div id="container2">
       <div id="selection-page">
         <div class="header">
+          <div class="header-number-div">
+            <div class="header-number"><%= minutes %></div>
+          </div>
           <img src="/static/images/selection_header.png"/>
         </div>
+        <div class="separator"></div>
         <% _.each(list, function(item, i) { %>
           <div class="content-list">
             <div class="content-piece">
                <span class="number"><%= i %></span>
-               <img class="icon" src="<%= item.iconUrl %>"/>
+               <div class="icon-div">
+                 <img class="icon" src="<%= item.iconUrl %>"/>
+              </div>
                <div class="content-details">
                  <div class="title"><%= item.title %></div>
                  <div class="url"><%= item.url %></div>
                </div>
-               <div class="horizontal-bar"></div>
+               <div class="separator"></div>
             </div>
           </div>
         <% }); %>
       </div>
+    </div>
     </script>
 	<script type="text/javascript">
     $(function() {
