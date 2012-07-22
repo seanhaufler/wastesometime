@@ -35,7 +35,7 @@ class RssScraper:
                 self.coll.update(
                     {"_id": _id},
                     {"$set": {"title": title,
-                              "wordcount": wordcount
+                              "wordcount": wordcount,
                               "url": url}},
                     upsert = True)
 
