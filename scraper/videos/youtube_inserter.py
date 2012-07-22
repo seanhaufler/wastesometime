@@ -14,7 +14,7 @@ def get_user_videos(username):
 		for video in feed.entry:
 			video_obj['date'] = video.published.text
 			video_obj['title'] = video.title.text
-			video_obj['duration'] = video.media.duration.seconds
+			video_obj['duration'] = int(video.media.duration.seconds)
 			
 			url = video.link[0].href
 			

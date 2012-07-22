@@ -12,11 +12,12 @@ import pymongo
 from bson import json_util
 
 class Application(tornado.web.Application):
+	
     def __init__(self):
         handlers = [
             (r"/", HomeHandler),
             (r"/articles/", ArticleHandler),
-            #(r"/videos/", VideoHandler)
+            (r"/videos/", VideoHandler)
         ]
         conn = pymongo.Connection()
         
@@ -34,30 +35,52 @@ class BaseHandler(tornado.web.RequestHandler):
     pass
 
 class HomeHandler(BaseHandler):
+	
     def get(self):
         self.render("home.html")
 
 class ArticleHandler(BaseHandler):
+	
     def get(self):
-        minLenInt = 200
-        maxLenInt = 400
+       	minLenInt = 200
+       	maxLenInt = 400
+
         try:
             minLenInt = int(self.get_argument("minLen"))
             maxLenInt = int(self.get_argument("maxLen"))
         except:
             pass
         coll = self.application.articles
-        query = {"$and": [{"wordcount": {"$gt": minLenInt}},
-                          {"wordcount": {"$lt": maxLenInt}}]}
+        query = {"$and": [{"wordcount": {"$gte": minLenInt}},
+                          {"wordcount": {"$lte": maxLenInt}}]}
         docs = coll.find(query)
         result_arr = []
         for doc in docs:
             result_arr.append(doc)
         self.write(json.dumps(result_arr, default=json_util.default))
 
+class VideoHandler(BaseHandler):
+	
+    def get(self):
+        minTime = 200
+	maxTime = 400
+		
+	try:
+	    minTime = int(self.get_argument("minTime"))
+	    maxTime = int(self.get_argument("maxTime"))
+	except:
+	    pass
+			
+	coll = self.application.videos
+	query = {"$and": [{"duration": {"$gte": minTime}},
+                          {"duration": {"$lte": maxTime}}]}
+        docs = coll.find(query)
+        result_arr = []
+        for doc in docs:
+            result_arr.append(doc)
 
-#class VideoHandler(BaseHandler):
-
+        self.write(json.dumps(result_arr, default=json_util.default))
+		
 
 def main(port='8080', address='127.0.0.1'):
     http_server = tornado.httpserver.HTTPServer(Application())
