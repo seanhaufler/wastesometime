@@ -7,6 +7,11 @@ var SelectionPageView = Backbone.View.extend({
     this.render();
   },
 
+  getHostname: function(str) {
+    var re = new RegExp('^(?:f|ht)tp(?:s)?\://([^/]+)', 'im');
+    return str.match(re)[1].toString().split('.')[1] //[1].toString();
+  }
+
   render: function() {
     $('#container').hide();
     if (this.options.content.length > 0) {
