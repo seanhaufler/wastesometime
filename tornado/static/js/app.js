@@ -49,4 +49,7 @@ var wst.TimerView = Backbone.Model.extend({
 
 /** App container. */
 var wst.App = Backbone.View.extend({
+    initialize: function() {
+        
+    }
 })
