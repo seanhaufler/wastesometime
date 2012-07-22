@@ -21,8 +21,8 @@ class Application(tornado.web.Application):
             (r"/videos/", VideoHandler),
             (r"/search/", DocSearchHandler)
             ]
-            
-        conn = pymongo.Connection()
+
+        conn = pymongo.Connection("amidvidy.com:27017")
 
         self.content = conn.content
         self.articles = self.content.articles
@@ -99,26 +99,26 @@ class DocSearchHandler(BaseHandler):
             maxTime = int(self.get_argument('maxTime'))
         except:
             pass
-            
+
         #scaling_factor = 2/3
         coll = self.application.videos
         query = {"duration": {"$lte": maxTime}}
         docs = coll.find(query).sort('duration', pymongo.DESCENDING)
         result_arr = []
         counter = 0
-        
+
         while counter < docs.count() and counter < 3:
             doc = docs.next()
             result_arr.append(doc)
             counter += 1
-            
+
         maxTime *= 200/60                #200 wpm
         coll = self.application.articles
         query = {"$and": [{"wordcount": {"$gt": 100}},
                 {"wordcount": {"$lte": maxTime}}]}
         docs = coll.find(query).sort('wordcount', pymongo.DESCENDING)
         counter = 0
-        
+
         while counter < docs.count() and counter < 3:
             doc = docs.next()
             result_arr.append(doc)
@@ -127,11 +127,10 @@ class DocSearchHandler(BaseHandler):
         vid1 = result_arr[1]
         result_arr[1] = result_arr[4]
         result_arr[4] = vid1
-        
-                
+
         self.write(json.dumps(result_arr, default=json_util.default))
-        
-        """  Code for random results 
+
+        """  Code for random results
         coll = self.application.videos
         query = {"$and": [{"duration": {"$gt": 0}},
                 {"duration": {"$lte": maxTime}}]}
@@ -170,9 +169,9 @@ class DocSearchHandler(BaseHandler):
         self.write(json.dumps(results, default=json_util.default))
 
 
-  
+
         self.write(json.dumps(results, default=json_util.default))
-        """    	
+        """
 
 def main(port='8080', address='127.0.0.1'):
     http_server = tornado.httpserver.HTTPServer(Application())
